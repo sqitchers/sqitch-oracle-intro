@@ -15,3 +15,5 @@ flips [appschema users] 2014-01-01T00:51:15Z Marge N. O’Vera <marge@example.co
 insert_flip [flips appschema] 2014-01-01T00:53:00Z Marge N. O’Vera <marge@example.com> # Creates a function to insert a flip.
 delete_flip [flips appschema] 2014-01-01T00:53:16Z Marge N. O’Vera <marge@example.com> # Creates a function to delete a flip.
 @v1.0.0-dev2 2014-01-01T01:01:52Z Marge N. O’Vera <marge@example.com> # Tag v1.0.0-dev2.
+
+crypt [appschema] 2014-01-01T01:13:48Z Marge N. O’Vera <marge@example.com> # Adds password hashing function.
