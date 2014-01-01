@@ -11,3 +11,4 @@ change_pass [users appschema] 2014-01-01T00:35:28Z Marge N. O’Vera <marge@exam
 lists [appschema users] 2014-01-01T00:43:46Z Marge N. O’Vera <marge@example.com> # Adds table for storing lists.
 insert_list [lists appschema] 2014-01-01T00:45:24Z Marge N. O’Vera <marge@example.com> # Creates a function to insert a list.
 delete_list [lists appschema] 2014-01-01T00:45:43Z Marge N. O’Vera <marge@example.com> # Creates a function to delete a list.
+flips [appschema users] 2014-01-01T00:51:15Z Marge N. O’Vera <marge@example.com> # Adds table for storing flips.
