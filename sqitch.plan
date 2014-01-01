@@ -17,3 +17,5 @@ delete_flip [flips appschema] 2014-01-01T00:53:16Z Marge N. O’Vera <marge@exam
 @v1.0.0-dev2 2014-01-01T01:01:52Z Marge N. O’Vera <marge@example.com> # Tag v1.0.0-dev2.
 
 crypt [appschema] 2014-01-01T01:13:48Z Marge N. O’Vera <marge@example.com> # Adds password hashing function.
+insert_user [insert_user@v1.0.0-dev2 crypt] 2014-01-01T01:15:16Z Marge N. O’Vera <marge@example.com># Change insert_user to use crypt.
+change_pass [change_pass@v1.0.0-dev2 crypt] 2014-01-01T01:16:33Z Marge N. O’Vera <marge@example.com># Change change_pass to use crypt.

@@ -1,6 +1,7 @@
 -- Deploy insert_user
 -- requires: users
 -- requires: appschema
+-- requires: crypt
 
 CREATE OR REPLACE PROCEDURE flipr.insert_user(
     nickname VARCHAR2,
@@ -9,9 +10,7 @@ CREATE OR REPLACE PROCEDURE flipr.insert_user(
 BEGIN
     INSERT INTO flipr.users VALUES(
         nickname,
-        LOWER( RAWTOHEX( UTL_RAW.CAST_TO_RAW(
-             sys.dbms_obfuscation_toolkit.md5(input_string => password)
-        ) ) ),
+        flipr.crypt(password, DBMS_RANDOM.STRING('p', 10)),
         DEFAULT
     );
 END;

@@ -1,6 +1,7 @@
 -- Deploy change_pass
 -- requires: users
 -- requires: appschema
+-- requires: crypt
 
 CREATE OR REPLACE PROCEDURE flipr.change_pass(
     nick    VARCHAR2,
@@ -10,13 +11,9 @@ CREATE OR REPLACE PROCEDURE flipr.change_pass(
    flipr_auth_failed EXCEPTION;
 BEGIN
     UPDATE flipr.users
-       SET password = LOWER( RAWTOHEX( UTL_RAW.CAST_TO_RAW(
-               sys.dbms_obfuscation_toolkit.md5(input_string => newpass)
-           ) ) )
+       SET password = flipr.crypt(newpass, DBMS_RANDOM.STRING('p', 10))
      WHERE nickname = nick
-       AND password = LOWER( RAWTOHEX( UTL_RAW.CAST_TO_RAW(
-               sys.dbms_obfuscation_toolkit.md5(input_string => oldpass)
-           ) ) );
+       AND password = flipr.crypt(oldpass, password);
      IF SQL%ROWCOUNT = 0 THEN RAISE flipr_auth_failed; END IF;
 END;
 /
