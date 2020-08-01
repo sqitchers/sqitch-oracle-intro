@@ -4,8 +4,8 @@ Sqitch Oracle Intro
 A tutorial repository demonstrating how to manage an
 [Oracle](http://www.oracle.com/us/products/database/) database with
 [Sqitch](http://sqitch.org/). The actual tutorial is
-[`sqitchtutorial-oracle`](https://github.com/theory/sqitch/blob/master/lib/sqitchtutorial-oracle.pod);
-this respository is actually the example repository described in the tutorial.
+[`sqitchtutorial-oracle`](https://sqitch.org/docs/manual/sqitchtutorial-oracle/);
+this repository is actually the example repository described in the tutorial.
 So you may want to look at the history here. Or clone this repository and run
 `sqitch` against various checkouts or just against the Git history.
 
